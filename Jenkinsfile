@@ -1,19 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('version') {
+    stage('Subscribed user') {
       steps {
-        bat 'python --version'
+        bat 'login_subscribed.py'
       }
     }
-    stage('hello') {
+    stage('Expired user') {
       steps {
-        bat 'python hello.py'
-      }
-    }
-    stage('Selenium') {
-      steps {
-        bat 'python Jankins_automation.py'
+        bat 'login_expired_trail.py'
       }
     }
   }
